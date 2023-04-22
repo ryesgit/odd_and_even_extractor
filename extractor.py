@@ -17,8 +17,10 @@ def open_file_and_extract():
     # Look for numbers.txt file
     try:
         with open('numbers.txt') as numbers:
+            # Iterate through every number from numbers.txt
             for line in numbers:
                 print(line.strip())
+
     except FileNotFoundError:
         return 'File numbers.txt is not found'
 
