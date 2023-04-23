@@ -42,7 +42,7 @@ def store_to_file(number, mode):
 
     # If number is first on list, create a new file or overwrite existing
     if not (first_odd and first_even):
-        # These will determine whether there the first odd or even have already been identified
+        # These will determine whether the first odd or even have already been identified
         if not first_odd and mode == 'odd':
             first_odd = True
         
