@@ -1,4 +1,5 @@
 import PySimpleGUI as sg
+from extractor import open_file_and_extract
 
 TITLE = "Even And Odd Extractor"
 
@@ -22,6 +23,7 @@ while True:
         break
 
     if(event == 'Upload'):
-        print(values[0])
+        open_file_and_extract(values[0])
+        sg.popup_quick_message('New files successfully created within this directory')
 
 window.close()
