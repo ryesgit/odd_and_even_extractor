@@ -12,12 +12,14 @@ This program separates the odd and even numbers into categorized text files.
 
 '''
 
+first_odd = False
+first_even = False
 
-def open_file_and_extract():
+def open_file_and_extract(file_path):
 
     # Look for numbers.txt file
     try:
-        with open('numbers.txt', 'r') as numbers:
+        with open(file_path, 'r') as numbers:
             # Iterate through every number from numbers.txt
             numbers = numbers.readlines()
 
@@ -29,7 +31,7 @@ def open_file_and_extract():
                 else:
                     store_to_file(str(number), 'odd')
     except FileNotFoundError:
-        return 'File numbers.txt is not found'
+        raise f'File {file_path} does not exist.'
 
 def store_to_file(number, mode):
 
@@ -52,8 +54,3 @@ def store_to_file(number, mode):
     else:
         with open(f'{mode}.txt', 'a') as odd_or_even_file:
             odd_or_even_file.write(str(number))
-
-first_odd = False
-first_even = False
-
-print(open_file_and_extract())
