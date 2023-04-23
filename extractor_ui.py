@@ -23,7 +23,11 @@ while True:
         break
 
     if(event == 'Upload'):
-        open_file_and_extract(values[0])
-        sg.popup_quick_message('New files successfully created within this directory')
+        try:
+            open_file_and_extract(values[0])
+            sg.popup_quick_message('New files successfully created within this directory')
+
+        except:
+            sg.popup_error('No such file found')
 
 window.close()
